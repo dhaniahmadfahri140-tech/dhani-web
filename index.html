@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhani Web Design</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            padding: 80px 8%;
+            text-align: center;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero span {
+            color: #0284c7;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #0284c7;
+        }
+
+        .price {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #16a34a;
+        }
+
+        .contact {
+            background: #111827;
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0b1120;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Dhani Web Design</h2>
+
+    <nav>
+        <a href="#layanan">Layanan</a>
+        <a href="#harga">Harga</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Buat Website untuk <span>Usaha Kamu</span></h1>
+
+    <p>
+        Jasa pembuatan website sederhana untuk UMKM,
+        toko, kuliner, bengkel, dan usaha lainnya.
+    </p>
+
+    <a class="btn"
+       href="https://wa.me/6283896355232?text=Halo%20saya%20tertarik%20membuat%20website"
+       target="_blank">
+       💬 Pesan Sekarang
+    </a>
+</section>
+
+<section id="layanan">
+    <h2>Layanan Kami</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🌐 Website Usaha</h3>
+            <p>
+                Website untuk memperkenalkan usaha,
+                produk, dan layanan kamu.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🛍️ Katalog Produk</h3>
+            <p>
+                Tampilkan produk dan informasi
+                harga dengan lebih menarik.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🖼️ Galeri</h3>
+            <p>
+                Tampilkan foto produk atau hasil
+                pekerjaan usaha kamu.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📱 WhatsApp</h3>
+            <p>
+                Pelanggan dapat langsung menghubungi
+                pemilik usaha melalui WhatsApp.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="harga">
+    <h2>Paket Harga</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Basic</h3>
+            <p>Website sederhana 1 halaman.</p>
+            <p class="price">Mulai Rp50.000</p>
+        </div>
+
+        <div class="card">
+            <h3>Usaha</h3>
+            <p>
+                Beranda, produk, galeri,
+                tentang, dan kontak.
+            </p>
+            <p class="price">Mulai Rp100.000</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom</h3>
+            <p>
+                Desain dan fitur disesuaikan
+                dengan kebutuhan.
+            </p>
+            <p class="price">Hubungi Kami</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="kontak" class="contact">
+    <h2>Hubungi Saya</h2>
+
+    <p>
+        Ingin punya website untuk usaha kamu?
+        Silakan hubungi saya melalui WhatsApp.
+    </p>
+
+    <a class="btn"
+       href="https://wa.me/6283896355232?text=Halo%20saya%20ingin%20bertanya%20tentang%20jasa%20website"
+       target="_blank">
+       📲 WhatsApp: 083896355232
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 Dhani Web Design</p>
+</footer>
+
+</body>
+</html>
