@@ -1,259 +1,497 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhani Web Design</title>
+
+    <title>Biodata & Katalog Produk</title>
 
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background: #f5f7fa;
-            color: #222;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #333;
         }
 
         header {
-            background: #111827;
+            background: #ff6600;
             color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
+            padding: 30px;
         }
 
-        header h2 {
-            color: #38bdf8;
+        nav {
+            background: #222;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin: 0 15px;
+            font-weight: bold;
         }
 
-        .hero {
-            padding: 80px 8%;
+        nav a:hover {
+            color: #ff6600;
+        }
+
+        section {
+            padding: 40px 8%;
+        }
+
+        h2 {
             text-align: center;
+            color: #ff6600;
+            margin-bottom: 25px;
+        }
+
+        /* BIODATA */
+        .biodata {
             background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
+        .foto {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        .hero span {
-            color: #0284c7;
+        .foto img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ff6600;
         }
 
-        .hero p {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td:first-child {
+            font-weight: bold;
+            width: 35%;
+        }
+
+        /* KATALOG */
+        .produk-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .produk {
+            background: white;
+            width: 240px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .produk img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .produk h3 {
+            margin-bottom: 5px;
+        }
+
+        .harga {
+            color: #ff6600;
             font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
+            font-weight: bold;
+            margin: 10px;
         }
 
         .btn {
             display: inline-block;
-            background: #25D366;
+            background: #ff6600;
             color: white;
-            padding: 14px 25px;
-            border-radius: 8px;
+            padding: 10px 20px;
             text-decoration: none;
-            font-weight: bold;
+            border-radius: 5px;
         }
 
-        section {
-            padding: 60px 8%;
-            text-align: center;
+        .btn:hover {
+            background: #cc5200;
         }
 
-        section h2 {
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
-
-        .cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .card {
+        /* BUKU TAMU */
+        .form-container {
             background: white;
-            width: 250px;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
         }
 
-        .card h3 {
-            margin-bottom: 12px;
-            color: #0284c7;
-        }
-
-        .price {
+        label {
+            display: block;
             margin-top: 15px;
             font-weight: bold;
-            color: #16a34a;
         }
 
-        .contact {
-            background: #111827;
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .radio {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #ff6600;
             color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
-        .contact p {
-            margin-bottom: 20px;
+        button:hover {
+            background: #cc5200;
         }
 
         footer {
+            background: #222;
+            color: white;
             text-align: center;
             padding: 20px;
-            background: #0b1120;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 5px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h2>Dhani Web Design</h2>
+    <!-- HEADER -->
+    <header>
+        <h1>BIODATA & KATALOG PRODUK</h1>
+        <p>Website Pribadi dan Katalog Produk</p>
+    </header>
 
+    <!-- MENU -->
     <nav>
-        <a href="#layanan">Layanan</a>
-        <a href="#harga">Harga</a>
-        <a href="#kontak">Kontak</a>
+        <a href="#biodata">Biodata</a>
+        <a href="#produk">Katalog Produk</a>
+        <a href="#bukutamu">Buku Tamu</a>
     </nav>
-</header>
 
-<section class="hero">
-    <h1>Buat Website untuk <span>Usaha Kamu</span></h1>
 
-    <p>
-        Jasa pembuatan website sederhana untuk UMKM,
-        toko, kuliner, bengkel, dan usaha lainnya.
-    </p>
+    <!-- BIODATA -->
+    <section id="biodata">
 
-    <a class="btn"
-       href="https://wa.me/6283896355232?text=Halo%20saya%20tertarik%20membuat%20website"
-       target="_blank">
-       💬 Pesan Sekarang
-    </a>
-</section>
+        <h2>Biodata Diri</h2>
 
-<section id="layanan">
-    <h2>Layanan Kami</h2>
+        <div class="biodata">
 
-    <div class="cards">
+            <div class="foto">
+                <img src="bafe60f4-7bfa-4364-b93c-33d8d729e64f.jpg" alt="Foto Profil">
+            </div>
 
-        <div class="card">
-            <h3>🌐 Website Usaha</h3>
-            <p>
-                Website untuk memperkenalkan usaha,
-                produk, dan layanan kamu.
-            </p>
+            <table>
+
+                <tr>
+                    <td>Nama</td>
+                    <td>AUNUR ROFIQ</td>
+                </tr>
+
+                <tr>
+                    
+                </tr>
+
+                <tr>
+                    <td>pekerjaan</td>
+                    <td>Mebel Alumunium</td>
+                </tr>
+
+                <tr>
+                    <td>NISN</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <td>Alamat</td>
+                    <td>JL.IMAM BONJOL PADE'AN BUGUL LOR PASURUAN, JAWA TIMUR</td>
+                </tr>
+
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>Laki-laki</td>
+                </tr>
+
+                <tr>
+                    
+                </tr>
+
+            </table>
+
         </div>
 
-        <div class="card">
-            <h3>🛍️ Katalog Produk</h3>
-            <p>
-                Tampilkan produk dan informasi
-                harga dengan lebih menarik.
-            </p>
+    </section>
+
+
+    <!-- KATALOG PRODUK -->
+    <section id="produk">
+
+        <h2>Katalog Produk</h2>
+
+        <div class="produk-container">
+
+            <div class="produk">
+
+                <img src="WhatsApp Image 2026-09-27 at 04.01.00.jpeg" alt="Produk 1">
+
+                <h3>Produk A</h3>
+
+                <p>Plafon PVC </p>
+
+                <div class="harga">
+                    Rp-450,000
+                </div>
+
+                <a href="#" class="btn">
+                    Beli
+                </a>
+
+            </div>
+
+
+            <div class="produk">
+
+                <img src="WhatsApp Image 2026-09-27 at 04.02.06.jpeg"alt="produk 2"
+                <h3>Produk B</h3>
+
+                <p>kitchen set.</p>
+
+                <div class="harga">
+                    Rp 1.800.000
+                </div>
+
+                <a href="#" class="btn">
+                    Beli
+                </a>
+
+            </div>
+
+
+            <div class="produk">
+
+                <img src="WhatsApp Image 2026-09-27 at 04.00.17.jpeg" alt="Produk 3">
+
+                <h3>Produk C</h3>
+
+                <p>pintu alumunium</p>
+
+                <div class="harga">
+                    Rp 2.500.000
+                </div>
+
+                <a href="#" class="btn">
+                    Beli
+                </a>
+
+            </div>
+
+
+            <div class="produk">
+
+                <img src="f6baae90-daa4-4cfe-bf6f-77a13faf8fa8.jpg" alt="Produk 4">
+
+                <h3>Produk D</h3>
+
+                <p>cendela alumunium</p>
+
+                <div class="harga">
+                    Rp 1.200.000
+                </div>
+
+                <a href="#" class="btn">
+                    Beli
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>🖼️ Galeri</h3>
-            <p>
-                Tampilkan foto produk atau hasil
-                pekerjaan usaha kamu.
-            </p>
+    </section>
+
+
+    <!-- BUKU TAMU -->
+    <section id="bukutamu">
+
+        <h2>Buku Tamu</h2>
+
+        <div class="form-container">
+
+            <form onsubmit="kirimPesan(event)">
+
+                <label for="nama">
+                    Nama Lengkap
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama"
+                    required
+                >
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan email"
+                    required
+                >
+
+
+                <label>
+                    Jenis Kelamin
+                </label>
+
+                <input
+                    class="radio"
+                    type="radio"
+                    name="gender"
+                    value="Laki-laki"
+                    required
+                >
+                Laki-laki
+
+                <input
+                    class="radio"
+                    type="radio"
+                    name="gender"
+                    value="Perempuan"
+                >
+                Perempuan
+
+
+                <label for="keperluan">
+                    Keperluan
+                </label>
+
+                <select id="keperluan" required>
+
+                    <option value="">
+                        Pilih keperluan
+                    </option>
+
+                    <option>
+                        Menanyakan Produk
+                    </option>
+
+                    <option>
+                        Memberikan Saran
+                    </option>
+
+                    <option>
+                        Memberikan Kritik
+                    </option>
+
+                    <option>
+                        Lainnya
+                    </option>
+
+                </select>
+
+
+                <label for="pesan">
+                    Pesan
+                </label>
+
+                <textarea
+                    id="pesan"
+                    placeholder="Tuliskan pesan Anda..."
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Kirim Buku Tamu
+                </button>
+
+            </form>
+
         </div>
 
-        <div class="card">
-            <h3>📱 WhatsApp</h3>
-            <p>
-                Pelanggan dapat langsung menghubungi
-                pemilik usaha melalui WhatsApp.
-            </p>
-        </div>
+    </section>
 
-    </div>
-</section>
 
-<section id="harga">
-    <h2>Paket Harga</h2>
+    <!-- FOOTER -->
+    <footer>
 
-    <div class="cards">
+        <p>
+            &copy; 2026 Biodata & Katalog Produk
+        </p>
 
-        <div class="card">
-            <h3>Basic</h3>
-            <p>Website sederhana 1 halaman.</p>
-            <p class="price">Mulai Rp50.000</p>
-        </div>
+    </footer>
 
-        <div class="card">
-            <h3>Usaha</h3>
-            <p>
-                Beranda, produk, galeri,
-                tentang, dan kontak.
-            </p>
-            <p class="price">Mulai Rp100.000</p>
-        </div>
 
-        <div class="card">
-            <h3>Custom</h3>
-            <p>
-                Desain dan fitur disesuaikan
-                dengan kebutuhan.
-            </p>
-            <p class="price">Hubungi Kami</p>
-        </div>
+    <!-- JAVASCRIPT -->
+    <script>
 
-    </div>
-</section>
+        function kirimPesan(event) {
 
-<section id="kontak" class="contact">
-    <h2>Hubungi Saya</h2>
+            event.preventDefault();
 
-    <p>
-        Ingin punya website untuk usaha kamu?
-        Silakan hubungi saya melalui WhatsApp.
-    </p>
+            let nama = document.getElementById("nama").value;
 
-    <a class="btn"
-       href="https://wa.me/6283896355232?text=Halo%20saya%20ingin%20bertanya%20tentang%20jasa%20website"
-       target="_blank">
-       📲 WhatsApp: 083896355232
-    </a>
-</section>
+            alert(
+                "Terima kasih, " +
+                nama +
+                "! Buku tamu berhasil dikirim."
+            );
 
-<footer>
-    <p>© 2026 Dhani Web Design</p>
-</footer>
+        }
+
+    </script>
 
 </body>
 </html>
+```
